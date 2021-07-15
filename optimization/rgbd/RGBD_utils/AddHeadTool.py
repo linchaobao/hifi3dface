@@ -4,11 +4,11 @@ This file is part of the repo: https://github.com/tencent-ailab/hifi3dface
 
 If you find the code useful, please cite our paper: 
 
-"High-Fidelity 3D Digital Human Creation from RGB-D Selfies."
-Xiangkai Lin*, Yajing Chen*, Linchao Bao*, Haoxian Zhang, Sheng Wang, Xuefei Zhe, Xinwei Jiang, Jue Wang, Dong Yu, and Zhengyou Zhang. 
-arXiv: https://arxiv.org/abs/2010.05562
+"High-Fidelity 3D Digital Human Head Creation from RGB-D Selfies."
+ACM Transactions on Graphics 2021
+Code: https://github.com/tencent-ailab/hifi3dface
 
-Copyright (c) [2020] [Tencent AI Lab]
+Copyright (c) [2020-2021] [Tencent AI Lab]
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -362,8 +362,8 @@ class AddHeadTool(object):
         in_mouth = np.mean(vertex_new[:, mouth_idx], 1)
         vector_xueer = xueer_mouth - xuuer_mideye
         vector_in = in_mouth - in_mideye
-        angle_xueer = math.atan(vector_xueer[1] / vector_xueer[2])
-        angle_in = math.atan(vector_in[1] / vector_in[2])
+        angle_xueer = math.atan(vector_xueer[2] / np.abs(vector_xueer[1]))
+        angle_in = math.atan(vector_in[2] / np.abs(vector_in[1]))
         change_y_angle = angle_in - angle_xueer
         rr = np.array(
             [

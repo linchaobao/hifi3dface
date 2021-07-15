@@ -4,11 +4,11 @@ This file is part of the repo: https://github.com/tencent-ailab/hifi3dface
 
 If you find the code useful, please cite our paper: 
 
-"High-Fidelity 3D Digital Human Creation from RGB-D Selfies."
-Xiangkai Lin*, Yajing Chen*, Linchao Bao*, Haoxian Zhang, Sheng Wang, Xuefei Zhe, Xinwei Jiang, Jue Wang, Dong Yu, and Zhengyou Zhang. 
-arXiv: https://arxiv.org/abs/2010.05562
+"High-Fidelity 3D Digital Human Head Creation from RGB-D Selfies."
+ACM Transactions on Graphics 2021
+Code: https://github.com/tencent-ailab/hifi3dface
 
-Copyright (c) [2020] [Tencent AI Lab]
+Copyright (c) [2020-2021] [Tencent AI Lab]
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -54,7 +54,7 @@ def bfs_find_corrospondence(landmarks, height, width, depth):
             visit = np.zeros((height, width))
 
             visit[y][x] = 1
-            queue = [[x + 1, y], [x - 1, y], [x, y - 1], [x, y - 1]]
+            queue = [[x + 1, y], [x - 1, y], [x, y - 1], [x, y + 1]]
             while 1:
                 if len(queue):
                     x = queue[0][0]

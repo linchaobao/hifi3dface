@@ -3,11 +3,11 @@ This file is part of the repo: https://github.com/tencent-ailab/hifi3dface
 
 If you find the code useful, please cite our paper: 
 
-"High-Fidelity 3D Digital Human Creation from RGB-D Selfies."
-Xiangkai Lin*, Yajing Chen*, Linchao Bao*, Haoxian Zhang, Sheng Wang, Xuefei Zhe, Xinwei Jiang, Jue Wang, Dong Yu, and Zhengyou Zhang. 
-arXiv: https://arxiv.org/abs/2010.05562
+"High-Fidelity 3D Digital Human Head Creation from RGB-D Selfies."
+ACM Transactions on Graphics 2021
+Code: https://github.com/tencent-ailab/hifi3dface
 
-Copyright (c) [2020] [Tencent AI Lab]
+Copyright (c) [2020-2021] [Tencent AI Lab]
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -186,13 +186,10 @@ def compute_loss(
             [
                 image_batch,
                 render_img_in_ori_pose["render_image"],
-                render_image_fake_M,
-                render_image_fake_L,
-                render_image_fake_R,
             ],
             axis=0,
         )
-        N_group = 5
+        N_group = 2
     else:  # RGBD
         all_images = tf.concat(
             [

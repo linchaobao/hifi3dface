@@ -3,11 +3,11 @@ This file is part of the repo: https://github.com/tencent-ailab/hifi3dface
 
 If you find the code useful, please cite our paper: 
 
-"High-Fidelity 3D Digital Human Creation from RGB-D Selfies."
-Xiangkai Lin*, Yajing Chen*, Linchao Bao*, Haoxian Zhang, Sheng Wang, Xuefei Zhe, Xinwei Jiang, Jue Wang, Dong Yu, and Zhengyou Zhang. 
-arXiv: https://arxiv.org/abs/2010.05562
+"High-Fidelity 3D Digital Human Head Creation from RGB-D Selfies."
+ACM Transactions on Graphics 2021
+Code: https://github.com/tencent-ailab/hifi3dface
 
-Copyright (c) [2020] [Tencent AI Lab]
+Copyright (c) [2020-2021] [Tencent AI Lab]
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -256,7 +256,7 @@ class Losses(object):
         invisible_losses = tf.reshape(tf.stack(invisible_losses, axis=0), [-1, 18])
 
         losses = tf.where(
-            tf.greater(0.0, normal_z), standard_landmark_losses, invisible_losses
+            tf.greater(normal_z, 0.0), standard_landmark_losses, invisible_losses
         )
         loss = tf.reduce_mean(losses, name="landmark2d_loss")
         return loss
