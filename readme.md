@@ -8,6 +8,11 @@
 
 <br>
 
+
+## Note: This repo is outdated. Please refer to our subsequent work here: https://github.com/csbhr/FFHQ-UV 
+
+
+<br>
 This repository provides the python code and 3DMM of the following paper:
 
 > **High-Fidelity 3D Digital Human Head Creation from RGB-D Selfies**.\
@@ -21,6 +26,8 @@ This repository provides the python code and 3DMM of the following paper:
 **Note**: *Please note that the reported running time in the paper are obtained with our optimized C++ code but NOT the python code here. The python code in this repository is only for research purposes and not fully optimized.*
 
 **Note**: Please visit the **./3DMM** folder for details about our 3DMM, namely **Tencent AI-NEXT 3D Face Model (East-Asian Version)**, in short **AI-NEXT Face Model (EAs)**.
+
+
 
 ## Disclaimer
 
